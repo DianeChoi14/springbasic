@@ -23,6 +23,7 @@
 		<beans:property name="suffix" value=".jsp" /> <!-- suffix : 접미사 -->
 	</beans:bean><!-- /WEB-INF/views/home.jsp -->
 	
+	<!--  아래의 패키지(com.webdiane.controller)를 조사(scan)하여 필요한 객체들을 메모리에 적재하여 동작하도록 -->
 	<context:component-scan base-package="com.webdiane.controller" />
 	
 	

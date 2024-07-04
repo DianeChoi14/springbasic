@@ -2,7 +2,9 @@ package com.webdiane.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Handles requests for the application home page.
@@ -45,7 +48,7 @@ public class HomeController {
 		return "ex1"; // 포워딩될 뷰단의 주소 : /WEB-INF/views/ex1.jsp
 	}
 	
-	@RequestMapping(value="/ex2", method= RequestMethod.GET)
+	@RequestMapping(value="/ex2", method= RequestMethod.GET) // 메서드 방식은 생략가능하며, 생략될 경우는 GET방식
 	public void exam2View(Model model)
 	{
 		System.out.println("exam2View method working......"); // 반환값 타입이 void일 경우엔 mapping된 주소.jsp 파일을 찾게 된다 (/WEB-INF/views/하위에서) 
@@ -65,8 +68,25 @@ public class HomeController {
 	public String examRedirect2()
 	{
 		return "redirect:/ex1";
-	}
+	}//리다이렉트(이미 만들어진 페이지 재호출)가 아니면 포워드
 	
+	@RequestMapping("/ex5")
+	public ModelAndView exModelAndView()
+	{
+		//ModelAndView객체 : 출력될 view단의 이름과, 출력데이터 (model)을 가지고 있는 객체
+		System.out.println("exModelAndView()....");
+		
+		
+		Map model = new HashMap<String, String>();
+		model.put("name", "둘리");
+		
+		/*
+		ModelAndView m = new ModelAndView();
+		m.setViewName("ex5");
+		m.addObject("name","둘리");
+		*/
+		return new ModelAndView("ex5", model);
+	}
 }
 
 
