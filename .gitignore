@@ -119,7 +119,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#확잦ㅇ자가 properties로 끝나는 파일은 깃으로 관리하지 않음
+#확장자가 properties로 끝나는 파일은 깃으로 관리하지 않음
 *.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
