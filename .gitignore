@@ -123,3 +123,6 @@ $RECYCLE.BIN/
 *.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
+
+# target/ 관리제외
+target/
