@@ -85,7 +85,7 @@ public class HomeController {
 		m.setViewName("ex5");
 		m.addObject("name","둘리");
 		*/
-		return new ModelAndView("ex5", model);
+		return new ModelAndView("ex5", model);  
 	}
 }
 
