@@ -65,8 +65,9 @@ public class ExamController
 		   msg = "success";
 	   }
 	   
-	   rediraAttributes.addAttribute("status", msg); // 페이지가 넘어갈 때 바인딩된 객체를 들고 간다
-	   
+	   //status라는 변수 값이 msg로 ... >
+	   //rediraAttributes.addAttribute("status", msg); // 쿼리스트링으로 추가됨
+	   rediraAttributes.addFlashAttribute("status", msg); // 쿼리스트링으로 추가되지 않고 그냥 바인딩 (보안우수)
 	   return "redirect:/";
    }
 }
