@@ -51,7 +51,8 @@ public class HomeController {
 	@RequestMapping(value="/ex2", method= RequestMethod.GET) // 메서드 방식은 생략가능하며, 생략될 경우는 GET방식
 	public void exam2View(Model model)
 	{
-		System.out.println("exam2View method working......"); // 반환값 타입이 void일 경우엔 mapping된 주소.jsp 파일을 찾게 된다 (/WEB-INF/views/하위에서) 
+		System.out.println("exam2View method working......");
+		// 반환값 타입이 void일 경우엔 mapping된 주소.jsp 파일을 찾게 된다 (/WEB-INF/views/하위에서) 
 	}
 	
 	@RequestMapping("/ex3")
@@ -63,7 +64,8 @@ public class HomeController {
 		
 	}
 	
-	// Q. ex4를 get방식으로 요청하면 examView()가 호출되도록 리다이렉트되는 메서드를 examRedirect2()라는 이름으로 작성해보세요
+	// Q. ex4를 get방식으로 요청하면 examView()가 호출되도록 리다이렉트되는 메서드를 
+	// examRedirect2()라는 이름으로 작성해보세요
 	@RequestMapping("/ex4")
 	public String examRedirect2()
 	{
