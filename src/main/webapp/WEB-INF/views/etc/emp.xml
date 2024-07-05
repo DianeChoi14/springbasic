@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emp>
+    <empNO>7369</empNO>
+    <eName>SMIITH</eName>
+    <job>CLRCK</job>
+    <mgr>7902</mgr>
+    <hiredate>80/12/17</hiredate>
+    <sal>800</sal>
+    <comm>0</comm>
+    <deptNo>20</deptNo>
+</emp>
