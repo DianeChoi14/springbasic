@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webdiane.model.ProductVO;
@@ -70,4 +71,15 @@ public class ExamController
 	   rediraAttributes.addFlashAttribute("status", msg); // 쿼리스트링으로 추가되지 않고 그냥 바인딩 (보안우수)
 	   return "redirect:/";
    }
+
+	// ProductVO객체를 json으로 변환하여 출력해보기
+	@RequestMapping("/outputJsonProduct")
+	public @ResponseBody ProductVO outputJsonProduct() 
+	// 위의 반환값타입에 @ResponseBody ProductVO(ProductVO객체를 json으로 변환하여 반환하라는 의미)
+	{
+		ProductVO p = new ProductVO("250705_2", "양파링", 2, 2500, "맛나요");
+		System.out.println(p.toString());
+		return p;
+	}
+
 }
